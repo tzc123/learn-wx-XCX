@@ -1,0 +1,30 @@
+/* pages/detail/detail.wxss */
+@import "/wxParse/wxParse.wxss";
+.detail{
+  height: 100%;
+}
+.detail-post-meta{
+  font-size: 30rpx;
+  padding: 30rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+
+}
+.detail-post-avatar{
+  margin-right: 20rpx;
+
+}
+.detail-post-avatar-img{
+  width: 85rpx;
+  height: 85rpx;
+  border-radius: 50%;
+}
+.detail-post-content{
+  overflow-x: hidden;
+  padding: 10rpx;
+}
+.content-info{
+  color: #6c6c6c;
+  word-wrap: break-word;
+}

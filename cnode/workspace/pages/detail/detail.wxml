@@ -1,0 +1,31 @@
+<!--pages/detail/detail.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>
+<view class="page detail">
+  <view class="detail-post-meta">
+    <view class="detail-post-avatar">
+      <navigator url="/pages/user/user?loginname={{detail.author.loginname}}">
+        <image class="detail-post-avatar-img" mode="scaleToFill" src="{{detail.author.avatar_url}}"></image>
+      </navigator>
+    </view>
+    <view class="detail-post-info">
+      <view class="detail-post-author-name">
+        <text>{{detail.author.loginname}}</text>
+      </view>
+    </view>
+    <view class="detail-post-time">
+      \r<text>{{detail.create_at}}</text>
+    </view>
+    <view id="{{detail.id}}" catchtap="collect" class="detail-collect-item" wx:if ="{{detail.is_collect==true}}">取消收藏</view>
+    <view id="{{detail.id}}" catchtap="collect" class="detail-collect-item" wx:if ="{{detail.is_collect==false}}">收藏</view>
+  </view>
+  <view class="detail-post-content">
+     <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+ </view>
+  <loading hidden="{{hidden}}">
+    加载中……
+  </loading>
+  <modal title="消息" confirm-text="确认" bindconfirm="confirmChange" bindcancel="cancelChange"
+  cancel-text="关闭" hidden="{{modalHidden}}">
+    您还没有登录cnode,前往认证登录？
+  </modal>
+</view>
